@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device‑width, initial-scale=1" />
+  <title>Mon Plan de Table – Outil de placement</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1 class="logo">PlanTable</h1>
+      <nav>
+        <a href="#features">Fonctionnalités</a>
+        <a href="#pricing">Tarifs</a>
+        <a href="#demo">Démo</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a href="/signup" class="btn-primary">Essayer gratuitement</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h2>Créez vos plans de table en toute simplicité</h2>
+      <p>Un outil en ligne pour gérer vos invités sans stress.</p>
+      <a href="#demo" class="btn-primary">Voir la démo</a>
+    </div>
+  </section>
+
+  <section id="features" class="features">
+    <div class="container">
+      <div class="feature">
+        <h3>Glisser-déposer</h3>
+        <p>Organisez vos tables facilement.</p>
+      </div>
+      <div class="feature">
+        <h3>Import invités</h3>
+        <p>Importez votre fichier CSV/Excel.</p>
+      </div>
+      <div class="feature">
+        <h3>Partage mobile</h3>
+        <p>Vos invités voient leur place sur téléphone.</p>
+      </div>
+      <!-- etc. -->
+    </div>
+  </section>
+
+  <section id="pricing" class="pricing">
+    <div class="container">
+      <h2>Tarifs</h2>
+      <div class="plan">
+        <h3>Événement</h3>
+        <p>29 €</p>
+        <p>Jusqu’à 200 invités</p>
+        <a href="/signup" class="btn-secondary">Choisir</a>
+      </div>
+      <div class="plan">
+        <h3>Annuel</h3>
+        <p>99 €/an</p>
+        <p>Jusqu’à 1000 invités</p>
+        <a href="/signup" class="btn-secondary">Choisir</a>
+      </div>
+      <div class="plan">
+        <h3>Entreprise</h3>
+        <p>Sur devis</p>
+        <p>Illimité</p>
+        <a href="/contact" class="btn-secondary">Contactez-nous</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="demo" class="demo">
+    <div class="container">
+      <h2>Démo en direct</h2>
+      <!-- Ici tu peux intégrer un iframe ou capture -->
+      <iframe src="https://digitaltables.netlify.app/" width="100%" height="500"></iframe>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2>Contactez-nous</h2>
+      <form action="/send-message" method="post">
+        <input type="text" name="name" placeholder="Votre nom" required>
+        <input type="email" name="email" placeholder="Votre courriel" required>
+        <textarea name="message" placeholder="Votre message"></textarea>
+        <button type="submit">Envoyer</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 Mon Plan de Table. Tous droits réservés.</p>
+    </div>
+  </footer>
+  
+  <script src="main.js"></script>
+</body>
+</html>
