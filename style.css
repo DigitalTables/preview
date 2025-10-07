@@ -146,31 +146,36 @@ section {
   color: var(--primary);
 }
 
-/* DEMO IFRAME */
-iframe {
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
 
+/* Container pour l'iframe */
 .iframe-wrapper {
   position: relative;
-  padding-top: 56.25%; /* ratio 16:9 */
-  width: 100%;
-  max-width: 960px;
-  margin: 0 auto;
-  border-radius: 12px;
+  padding-top: 56.25%; /* Ratio 16:9 */
+  width: 100%; /* Prendre toute la largeur de l'écran */
+  max-width: 100%; /* Pas de limite sur la taille */
+  margin: 0 auto;  /* Centrage horizontal */
+  border-radius: 8px; /* Bord arrondi pour un effet plus élégant */
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: #f1f3f5; /* Un fond léger pour l'iframe */
 }
 
+/* L'iframe elle-même */
 .iframe-wrapper iframe {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
-  border-radius: 12px;
+  width: 100%; /* Toujours occuper toute la largeur */
+  height: 100%; /* Toujours occuper toute la hauteur */
+  border: none; /* Enlève les bordures de l'iframe */
+  border-radius: 8px; /* Bord arrondi */
+}
+
+/* Pour les petits écrans */
+@media (max-width: 768px) {
+  .iframe-wrapper {
+    padding-top: 56.25%; /* Ratio 16:9 (hauteur ajustée en fonction de la largeur) */
+  }
 }
 
 /* FORMULAIRE */
