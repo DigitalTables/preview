@@ -1,17 +1,22 @@
 :root {
-  --primary: #4c6ef5;
-  --secondary: #f8f9fa;
-  --dark: #212529;
+  --primary: #a67c52; /* marron doux */
+  --secondary: #f5eee5; /* beige clair */
+  --dark: #3e2f27;
   --light: #ffffff;
+  --accent: #d0bfae;
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Quicksand', sans-serif;
 }
 
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: var(--secondary);
+  font-family: var(--font-sans);
+  background: radial-gradient(ellipse at center, #fffdfb 0%, var(--secondary) 100%);
   color: var(--dark);
+  line-height: 1.6;
 }
 
+/* HEADER */
 header {
   background: var(--primary);
   color: var(--light);
@@ -25,18 +30,44 @@ header .container {
   max-width: 1100px;
   margin: auto;
   padding: 0 1rem;
+  flex-wrap: wrap;
+}
+
+h1 {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  margin: 0;
 }
 
 nav a {
   color: var(--light);
   margin-left: 1rem;
   text-decoration: none;
+  font-weight: 600;
+  font-family: var(--font-sans);
 }
 
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* HERO */
 .hero {
-  background: #e9ecef;
+  background: var(--secondary);
   text-align: center;
   padding: 4rem 1rem;
+}
+
+.hero h2 {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto 2rem;
 }
 
 .hero .btn {
@@ -46,85 +77,130 @@ nav a {
   border: none;
   text-decoration: none;
   font-weight: bold;
-  border-radius: 4px;
+  border-radius: 25px;
+  font-family: var(--font-sans);
+  transition: background 0.3s ease;
+}
+
+.hero .btn:hover {
+  background: #8d6245;
+}
+
+/* SECTIONS */
+section {
+  padding: 3rem 1rem;
 }
 
 .features, .pricing, .demo, .contact {
-  padding: 3rem 1rem;
   background: var(--light);
 }
 
-.container {
-  max-width: 1100px;
-  margin: auto;
+.features h2,
+.pricing h2,
+.demo h2,
+.contact h2 {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
-.grid {
+/* GRID */
+.grid, .plans {
   display: flex;
   gap: 2rem;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
+/* FEATURES */
 .feature {
   flex: 1;
   min-width: 250px;
-  background: #f1f3f5;
+  background: #f8f5f0;
   padding: 1.5rem;
-  border-radius: 8px;
-}
-
-.plans {
-  display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.plan {
-  flex: 1;
-  min-width: 250px;
-  background: #e9ecef;
-  padding: 2rem;
-  border-radius: 8px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
   text-align: center;
 }
 
+/* PRICING */
+.plan {
+  flex: 1;
+  min-width: 250px;
+  background: #f1e8de;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease;
+}
+
+.plan:hover {
+  transform: translateY(-5px);
+}
+
 .price {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: bold;
   color: var(--primary);
 }
 
+/* DEMO IFRAME */
+iframe {
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* FORMULAIRE */
 form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  max-width: 600px;
+  margin: auto;
 }
 
 input, textarea {
   padding: 0.75rem;
-  border: 1px solid #ced4da;
-  border-radius: 4px;
-  width: 100%;
+  border: 1px solid #d0bfae;
+  border-radius: 6px;
+  font-family: var(--font-sans);
+  font-size: 1rem;
 }
 
 button {
-  background: var(--primary);
-  color: var(--light);
+  background: linear-gradient(135deg, var(--secondary) 0%, #e7d8c7 100%);
+  color: var(--dark);
   padding: 0.75rem;
-  border: none;
-  border-radius: 4px;
+  border: 1px solid var(--accent);
+  border-radius: 25px;
   font-weight: bold;
+  font-family: var(--font-sans);
   cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
+button:hover {
+  background: linear-gradient(135deg, #e7d8c7 0%, var(--secondary) 100%);
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* FOOTER */
 footer {
   background: var(--dark);
   color: var(--light);
   text-align: center;
   padding: 1rem 0;
-  margin-top: 2rem;
+  font-size: 0.9rem;
 }
 
+/* RESPONSIVE */
 @media (max-width: 768px) {
   .grid, .plans {
     flex-direction: column;
@@ -136,4 +212,6 @@ footer {
   }
 
   nav {
-   
+    margin-top: 0.5rem;
+  }
+}
