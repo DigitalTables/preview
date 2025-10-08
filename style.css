@@ -152,20 +152,24 @@ section {
   color: var(--primary);
 }
 
-
 .iframe-wrapper {
+  position: relative;
   width: 100%;
-  overflow-x: hidden;
+  padding-bottom: 56.25%; /* Ratio 16:9 */
+  height: 0;
+  overflow: hidden;
+  border-radius: 8px; /* optionnel pour l’esthétique */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .iframe-wrapper iframe {
-  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  max-width: 100%;
-  height: 500px;
+  height: 100%;
   border: none;
 }
-
 
 /* FORMULAIRE */
 form {
