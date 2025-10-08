@@ -229,4 +229,10 @@ footer {
   nav {
     margin-top: 0.5rem;
   }
+  @media (max-width: 768px) {
+  .iframe-wrapper iframe {
+    min-height: 500px; /* un peu moins haut sur mobile */
+  }
+}
+
 }
