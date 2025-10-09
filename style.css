@@ -236,3 +236,45 @@ footer {
 }
 
 }
+/* === LOGO + HEADER FIX === */
+.logo-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  height: 50px;          /* Taille adaptée du logo */
+  width: auto;           /* Garde le bon ratio */
+  object-fit: contain;   /* Empêche la déformation */
+  border-radius: 8px;    /* Optionnel : adoucit légèrement les angles */
+}
+
+.logo-title h1 {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  margin: 0;
+  color: var(--light);
+}
+
+/* Ajuste un peu le header */
+header {
+  background: var(--primary);
+  color: var(--light);
+  padding: 0.5rem 0; /* Réduit légèrement la hauteur */
+}
+
+/* Responsive : logo plus petit sur mobile */
+@media (max-width: 600px) {
+  .logo {
+    height: 40px;
+  }
+
+  .logo-title h1 {
+    font-size: 1.4rem;
+  }
+}
+header .container {
+  align-items: center;
+}
+
