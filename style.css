@@ -7,11 +7,11 @@
   --font-serif: 'Playfair Display', serif;
   --font-sans: 'Quicksand', sans-serif;
 }
-
 html, body {
-  max-width: 100%;
-  overflow-x: hidden;
+  max-width: 100%;
+  overflow-x: hidden;
 }
+
 
 body {
   margin: 0;
@@ -35,31 +35,9 @@ header .container {
   max-width: 1100px;
   margin: auto;
   padding: 0 1rem;
-  flex-wrap: nowrap; /* Empêche le retour à la ligne */
-  gap: 1rem; /* Espacement entre le logo et les liens */
-}
-
-/* Logo + titre */
-.logo-title {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  flex-shrink: 0; /* Empêche la réduction excessive */
-}
-
-.logo {
-  height: 50px;
-  width: auto;
-  object-fit: contain;
-  border-radius: 8px;
-}
-
-.logo-title h1 {
-  font-family: var(--font-serif);
-  font-size: 1.8rem;
-  margin: 0;
-  color: var(--light);
-  white-space: nowrap; /* Empêche de couper le titre */
+  flex-wrap: nowrap;  /* Empêche le menu de passer à la ligne */
+  gap: 1rem;  /* Espacement entre le logo et les liens */
+  overflow-x: auto; /* Permet un défilement horizontal si nécessaire */
 }
 
 /* MENU */
@@ -68,12 +46,12 @@ nav {
   flex-wrap: nowrap; /* Empêche les éléments du menu de passer à la ligne */
   justify-content: center; /* Centre les éléments horizontalement */
   gap: 1rem; /* Espacement entre les éléments du menu */
+  width: 100%; /* Prend toute la largeur disponible */
 }
 
 nav a {
   white-space: nowrap; /* Empêche le texte des liens de se couper */
   color: var(--light);
-  margin-left: 1rem;
   text-decoration: none;
   font-weight: 600;
   font-family: var(--font-serif);
@@ -83,8 +61,258 @@ nav a:hover {
   text-decoration: underline;
 }
 
-/* Sur mobile, le menu reste sur une seule ligne */
+/* Réduction de la taille de police et de l'espacement pour mobile */
 @media (max-width: 768px) {
   header .container {
-    flex-wra
+    flex-wrap: nowrap;
+    justify-content: center; /* Centre tout le contenu */
+  }
 
+  nav {
+    justify-content: center;
+    gap: 0.75rem; /* Espacement réduit sur mobile */
+  }
+
+  nav a {
+    font-size: 1rem; /* Taille des liens ajustée pour mobile */
+  }
+}
+
+/* Sur très petits écrans (moins de 480px) */
+@media (max-width: 480px) {
+  header .container {
+    flex-wrap: nowrap; /* Évite les retours à la ligne dans le header */
+    justify-content: center;
+  }
+
+  nav a {
+    font-size: 0.9rem; /* Taille des liens réduite sur les très petits écrans */
+    padding: 0.5rem; /* Réduit le padding des liens pour plus de place */
+  }
+}
+
+
+
+/* Sur mobile, le menu reste sur une seule ligne */
+
+
+/* HERO */
+.hero {
+  background: var(--secondary);
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.hero h2 {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+}
+
+.hero .btn {
+  background: var(--primary);
+  color: var(--light);
+  padding: 0.75rem 1.5rem;
+  border: none;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 25px;
+  font-family: var(--font-serif);
+  transition: background 0.3s ease;
+}
+
+.hero .btn:hover {
+  background: #8d6245;
+}
+
+/* SECTIONS */
+section {
+  padding: 3rem 1rem;
+}
+
+.features, .pricing, .demo, .contact {
+  background: var(--light);
+}
+
+.features h2,
+.pricing h2,
+.demo h2,
+.contact h2 {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* GRID */
+.grid, .plans {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* FEATURES */
+.feature {
+  flex: 1;
+  min-width: 250px;
+  background: #f8f5f0;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+/* PRICING */
+.plan {
+  flex: 1;
+  min-width: 250px;
+  background: #f1e8de;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease;
+}
+
+.plan:hover {
+  transform: translateY(-5px);
+}
+
+.price {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.iframe-wrapper {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.iframe-wrapper iframe {
+  width: 100%;
+  min-height: 600px; /* Ajuste ici selon la taille réelle nécessaire */
+  border: none;
+  display: block;
+}
+
+
+/* FORMULAIRE */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 600px;
+  margin: auto;
+}
+
+input, textarea {
+  padding: 0.75rem;
+  border: 1px solid #d0bfae;
+  border-radius: 6px;
+  font-family: var(--font-serif);
+  font-size: 1rem;
+}
+
+button {
+  background: linear-gradient(135deg, var(--secondary) 0%, #e7d8c7 100%);
+  color: var(--dark);
+  padding: 0.75rem;
+  border: 1px solid var(--accent);
+  border-radius: 25px;
+  font-weight: bold;
+  font-family: var(--font-serif);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+button:hover {
+  background: linear-gradient(135deg, #e7d8c7 0%, var(--secondary) 100%);
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* FOOTER */
+footer {
+  background: var(--dark);
+  color: var(--light);
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .grid, .plans {
+    flex-direction: column;
+  }
+
+  header .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav {
+    margin-top: 0.5rem;
+  }
+  @media (max-width: 768px) {
+  .iframe-wrapper iframe {
+    min-height: 500px; /* un peu moins haut sur mobile */
+  }
+}
+
+}
+/* === LOGO + HEADER FIX === */
+.logo-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  height: 50px;          /* Taille adaptée du logo */
+  width: auto;           /* Garde le bon ratio */
+  object-fit: contain;   /* Empêche la déformation */
+  border-radius: 8px;    /* Optionnel : adoucit légèrement les angles */
+}
+
+.logo-title h1 {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  margin: 0;
+  color: var(--light);
+}
+
+/* Ajuste un peu le header */
+header {
+  background: var(--primary);
+  color: var(--light);
+  padding: 0.5rem 0; /* Réduit légèrement la hauteur */
+}
+
+/* Responsive : logo plus petit sur mobile */
+@media (max-width: 600px) {
+  .logo {
+    height: 40px;
+  }
+
+  .logo-title h1 {
+    font-size: 1.4rem;
+  }
+}
+header .container {
+  align-items: center;
+}
