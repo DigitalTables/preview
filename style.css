@@ -63,13 +63,13 @@ header .container {
   white-space: nowrap; /* Empêche de couper le titre */
 }
 
-/* MENU - Ajoute ce bloc juste après */
+/* MENU */
 nav {
   display: flex;
   flex-wrap: nowrap;  /* Empêche les éléments du menu de passer à la ligne */
   justify-content: center; /* Centre les éléments horizontalement */
   gap: 1rem; /* Espacement entre les éléments du menu */
-  overflow-x: auto; /* Permet un défilement horizontal sur petits écrans si nécessaire */
+  width: 100%;  /* Prend toute la largeur disponible */
 }
 
 nav a {
@@ -88,18 +88,20 @@ nav a:hover {
 /* Sur mobile, le menu reste sur une seule ligne */
 @media (max-width: 768px) {
   header .container {
-    flex-wrap: nowrap; /* Pas de retour à la ligne sur mobile pour tout le container */
+    flex-wrap: nowrap; /* Empêche le retour à la ligne dans tout le container */
+    justify-content: center;  /* Centre le contenu du header */
   }
 
   nav {
-    justify-content: flex-start;  /* Aligne à gauche pour plus de place */
-    width: 100%; /* Prend toute la largeur */
+    justify-content: center;  /* Centre les liens dans le menu */
+    width: 100%; /* Occupe toute la largeur disponible */
   }
 
   nav a {
-    font-size: 1rem; /* Ajuste un peu la taille des liens sur mobile */
+    font-size: 1rem; /* Ajuste légèrement la taille des liens sur mobile */
   }
 }
+
 
 
 /* HERO */
