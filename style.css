@@ -21,14 +21,12 @@ body {
   line-height: 1.6;
 }
 
-
 /* HEADER */
 header {
   background: var(--primary);
   color: var(--light);
-  padding: 1rem 0;
+  padding: 0.5rem 0;
 }
-
 
 header .container {
   display: flex;
@@ -37,38 +35,45 @@ header .container {
   max-width: 1100px;
   margin: auto;
   padding: 0 1rem;
-  flex-wrap: nowrap; /* empêche le retour à la ligne */
-  gap: 1rem;
+  flex-wrap: nowrap; /* Empêche le retour à la ligne */
+  overflow-x: auto; /* Permet un défilement horizontal si nécessaire */
+  gap: 1rem; /* Espacement entre le logo et les liens */
 }
 
-header h1, 
-header nav {
-  flex-shrink: 0; /* empêche la compression excessive du texte */
+/* Logo + titre */
+.logo-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0; /* Empêche la réduction excessive */
 }
 
+.logo {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.logo-title h1 {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  margin: 0;
+  color: var(--light);
+  white-space: nowrap; /* Empêche de couper le titre */
+}
+
+/* MENU - Ajoute ce bloc juste après */
 nav {
   display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto; /* permet le défilement si l’espace est vraiment réduit */
+  flex-wrap: nowrap;  /* Empêche les éléments du menu de passer à la ligne */
+  justify-content: center; /* Centre les éléments horizontalement */
+  gap: 1rem; /* Espacement entre les éléments du menu */
+  overflow-x: auto; /* Permet un défilement horizontal sur petits écrans si nécessaire */
 }
 
 nav a {
-  white-space: nowrap; /* empêche les liens de se couper */
-  color: var(--light);
-  margin-left: 1rem;
-  text-decoration: none;
-  font-weight: 600;
-  font-family: var(--font-serif);
-}
-
-
-h1 {
-  font-family: var(--font-serif);
-  font-size: 2rem;
-  margin: 0;
-}
-
-nav a {
+  white-space: nowrap; /* Empêche le texte des liens de se couper */
   color: var(--light);
   margin-left: 1rem;
   text-decoration: none;
@@ -79,6 +84,23 @@ nav a {
 nav a:hover {
   text-decoration: underline;
 }
+
+/* Sur mobile, le menu reste sur une seule ligne */
+@media (max-width: 768px) {
+  header .container {
+    flex-wrap: nowrap; /* Pas de retour à la ligne sur mobile pour tout le container */
+  }
+
+  nav {
+    justify-content: flex-start;  /* Aligne à gauche pour plus de place */
+    width: 100%; /* Prend toute la largeur */
+  }
+
+  nav a {
+    font-size: 1rem; /* Ajuste un peu la taille des liens sur mobile */
+  }
+}
+
 
 /* HERO */
 .hero {
