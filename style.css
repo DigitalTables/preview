@@ -279,3 +279,21 @@ header .container {
   align-items: center;
 }
 
+/* Empêche tout débordement horizontal sur la démo */
+.demo .iframe-wrapper {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Corrige l’iframe elle-même */
+.demo iframe {
+  width: 100%;
+  max-width: 100%;
+  display: block;
+  border: none;
+}
+
+
