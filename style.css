@@ -37,8 +37,30 @@ header .container {
   max-width: 1100px;
   margin: auto;
   padding: 0 1rem;
-  flex-wrap: wrap;
+  flex-wrap: nowrap; /* empêche le retour à la ligne */
+  gap: 1rem;
 }
+
+header h1, 
+header nav {
+  flex-shrink: 0; /* empêche la compression excessive du texte */
+}
+
+nav {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto; /* permet le défilement si l’espace est vraiment réduit */
+}
+
+nav a {
+  white-space: nowrap; /* empêche les liens de se couper */
+  color: var(--light);
+  margin-left: 1rem;
+  text-decoration: none;
+  font-weight: 600;
+  font-family: var(--font-serif);
+}
+
 
 h1 {
   font-family: var(--font-serif);
