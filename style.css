@@ -35,47 +35,23 @@ header .container {
   max-width: 1100px;
   margin: auto;
   padding: 0 1rem;
-  flex-wrap: nowrap; /* Empêche le retour à la ligne */
+  flex-wrap: nowrap;  /* Empêche le menu de passer à la ligne */
+  gap: 1rem;  /* Espacement entre le logo et les liens */
   overflow-x: auto; /* Permet un défilement horizontal si nécessaire */
-  gap: 1rem; /* Espacement entre le logo et les liens */
-}
-
-/* Logo + titre */
-.logo-title {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  flex-shrink: 0; /* Empêche la réduction excessive */
-}
-
-.logo {
-  height: 50px;
-  width: auto;
-  object-fit: contain;
-  border-radius: 8px;
-}
-
-.logo-title h1 {
-  font-family: var(--font-serif);
-  font-size: 1.8rem;
-  margin: 0;
-  color: var(--light);
-  white-space: nowrap; /* Empêche de couper le titre */
 }
 
 /* MENU */
 nav {
   display: flex;
-  flex-wrap: nowrap;  /* Empêche les éléments du menu de passer à la ligne */
+  flex-wrap: nowrap; /* Empêche les éléments du menu de passer à la ligne */
   justify-content: center; /* Centre les éléments horizontalement */
   gap: 1rem; /* Espacement entre les éléments du menu */
-  width: 100%;  /* Prend toute la largeur disponible */
+  width: 100%; /* Prend toute la largeur disponible */
 }
 
 nav a {
   white-space: nowrap; /* Empêche le texte des liens de se couper */
   color: var(--light);
-  margin-left: 1rem;
   text-decoration: none;
   font-weight: 600;
   font-family: var(--font-serif);
@@ -85,23 +61,39 @@ nav a:hover {
   text-decoration: underline;
 }
 
-/* Sur mobile, le menu reste sur une seule ligne */
+/* Réduction de la taille de police et de l'espacement pour mobile */
 @media (max-width: 768px) {
   header .container {
-    flex-wrap: nowrap; /* Empêche le retour à la ligne dans tout le container */
-    justify-content: center;  /* Centre le contenu du header */
+    flex-wrap: nowrap;
+    justify-content: center; /* Centre tout le contenu */
   }
 
   nav {
-    justify-content: center;  /* Centre les liens dans le menu */
-    width: 100%; /* Occupe toute la largeur disponible */
+    justify-content: center;
+    gap: 0.75rem; /* Espacement réduit sur mobile */
   }
 
   nav a {
-    font-size: 1rem; /* Ajuste légèrement la taille des liens sur mobile */
+    font-size: 1rem; /* Taille des liens ajustée pour mobile */
   }
 }
 
+/* Sur très petits écrans (moins de 480px) */
+@media (max-width: 480px) {
+  header .container {
+    flex-wrap: nowrap; /* Évite les retours à la ligne dans le header */
+    justify-content: center;
+  }
+
+  nav a {
+    font-size: 0.9rem; /* Taille des liens réduite sur les très petits écrans */
+    padding: 0.5rem; /* Réduit le padding des liens pour plus de place */
+  }
+}
+
+
+
+/* Sur mobile, le menu reste sur une seule ligne */
 
 
 /* HERO */
