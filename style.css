@@ -28,6 +28,7 @@ body {
   background: radial-gradient(ellipse at center, #fffdfb 0%, var(--secondary) 100%);
   color: var(--dark);
   line-height: 1.6;
+  font-size: 1rem;
 }
 
 /* Container commun */
@@ -73,23 +74,19 @@ section { padding:3rem 1rem; }
 .plan:hover { transform:translateY(-5px); }
 .price { font-size:1.8rem; font-weight:700; color:var(--primary); }
 
-/* IFRAME WRAPPER (si utilisé ailleurs) */
+/* IFRAME WRAPPER */
 .iframe-wrapper { width:100%; overflow:hidden; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.1); }
 .iframe-wrapper iframe { width:100%; min-height:650px; border:none; display:block; border-radius:12px; }
 
-/* ================================
-   FORMULAIRES - styles globaux (btn / champs natifs)
-   ================================ */
+/* FORMULAIRE NATIF */
 form { display:flex; flex-direction:column; gap:1rem; max-width:600px; margin:0 auto; }
 input, textarea { padding:0.75rem; border:1px solid var(--accent); border-radius:6px; font-family:var(--font-sans); font-size:1rem; color:var(--dark); background:var(--secondary); }
 button { background: linear-gradient(135deg, var(--secondary) 0%, #e7d8c7 100%); color:var(--dark); padding:0.75rem; border:1px solid var(--accent); border-radius:25px; font-weight:700; font-family:var(--font-serif); cursor:pointer; box-shadow:0 2px 6px rgba(0,0,0,0.1); transition:all .25s; }
 button:hover { transform:translateY(-2px); }
 
 /* ================================
-   JOTFORM (scoped) - ciblage fort pour FORCER le style voulu
-   On cible le wrapper .digitaltables-jotform afin d'éviter conflits globaux
+   JOTFORM (scoped)
    ================================ */
-
 .digitaltables-jotform { width:100%; }
 .digitaltables-jotform .form-all,
 .digitaltables-jotform .jotform-form,
@@ -101,7 +98,7 @@ button:hover { transform:translateY(-2px); }
   font-family: inherit !important;
 }
 
-/* remove any bullets / list-styles coming from form markup */
+/* remove list styles */
 .digitaltables-jotform ul,
 .digitaltables-jotform li {
   list-style: none !important;
@@ -109,7 +106,7 @@ button:hover { transform:translateY(-2px); }
   padding: 0 !important;
 }
 
-/* container / card look for form */
+/* container look */
 .digitaltables-jotform .jotform-form {
   background: var(--light) !important;
   border-radius: 12px !important;
@@ -119,7 +116,7 @@ button:hover { transform:translateY(-2px); }
   margin: 1.5rem auto !important;
 }
 
-/* header inside form */
+/* header */
 .digitaltables-jotform .form-header-group .form-header {
   color: var(--primary) !important;
   font-family: var(--font-serif) !important;
@@ -127,7 +124,6 @@ button:hover { transform:translateY(-2px); }
   margin-bottom: .35rem !important;
   font-size: 1.6rem !important;
 }
-
 .digitaltables-jotform .form-header-group .form-subHeader {
   text-align: center !important;
   color: rgba(62,47,39,0.9) !important;
@@ -145,7 +141,7 @@ button:hover { transform:translateY(-2px); }
   font-family:var(--font-serif) !important;
 }
 
-/* inputs / textarea / dropdown */
+/* inputs */
 .digitaltables-jotform .form-textbox,
 .digitaltables-jotform .form-textarea,
 .digitaltables-jotform .form-dropdown,
@@ -163,7 +159,6 @@ button:hover { transform:translateY(-2px); }
   box-sizing: border-box !important;
 }
 
-/* textarea height */
 .digitaltables-jotform .form-textarea { min-height:140px !important; resize:vertical !important; }
 
 /* focus */
@@ -177,16 +172,11 @@ button:hover { transform:translateY(-2px); }
   box-shadow: 0 0 0 3px rgba(166,124,82,0.12) !important;
 }
 
-/* sub-labels (prenom/nom) */
+/* sub-labels */
 .digitaltables-jotform .form-sub-label-container { display:inline-block !important; width:48% !important; vertical-align:top !important; padding-right:2% !important; }
 .digitaltables-jotform .form-sub-label { font-size:.85rem !important; color:#6b5c4b !important; }
-
-/* if only one sub-label container, force full width */
 .digitaltables-jotform .form-sub-label-container:only-child,
-.digitaltables-jotform .form-sub-label-container:nth-child(odd):last-child {
-  width:100% !important;
-  padding-right:0 !important;
-}
+.digitaltables-jotform .form-sub-label-container:nth-child(odd):last-child { width:100% !important; padding-right:0 !important; }
 
 /* submit button */
 .digitaltables-jotform .form-submit-button,
@@ -204,21 +194,33 @@ button:hover { transform:translateY(-2px); }
   cursor:pointer !important;
   transition: transform .18s ease, box-shadow .18s ease !important;
 }
-
 .digitaltables-jotform .form-submit-button:hover,
 .digitaltables-jotform button[type="submit"]:hover { transform: translateY(-2px) !important; }
 
-/* required star color */
 .digitaltables-jotform .form-required { color:#b94e48 !important; }
-
-/* remove any background defined deeper in JotForm markup */
 .digitaltables-jotform [style*="background"] { background: none !important; }
-
-/* ensure no default widths cause layout overflow */
 .digitaltables-jotform .form-all { max-width:100% !important; width:100% !important; }
-
-/* accessibility / spacing */
 .digitaltables-jotform .form-line { margin-bottom: 1.35rem !important; padding:0 !important; }
+
+/* ================================
+   COHERENCE TYPOGRAPHIQUE GLOBALE
+   ================================ */
+h1, h2, h3, h4, h5, h6,
+nav a,
+.hero .btn,
+button,
+.digitaltables-jotform .form-label,
+.digitaltables-jotform .form-submit-button {
+  font-family: var(--font-serif) !important;
+}
+
+body, p, li, input, textarea,
+.digitaltables-jotform .form-textbox,
+.digitaltables-jotform .form-textarea,
+.digitaltables-jotform .form-sub-label,
+.digitaltables-jotform .form-subHeader {
+  font-family: var(--font-sans) !important;
+}
 
 /* ================================
    FOOTER
