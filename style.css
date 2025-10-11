@@ -316,3 +316,21 @@ body, p, li, input, textarea,
    FOOTER
    ================================ */
 footer { background:var(--dark); color:var(--light); text-align:center; padding:1rem 0; font-size:.9rem; 
+
+/* Optimisation pour mobile */
+@media (max-width: 768px) {
+    header .menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    header .menu a {
+        font-size: 14px; /* Réduire la taille des textes */
+        margin-right: 20px; /* Espacement entre les éléments */
+    }
+
+    header .logo img {
+        max-width: 120px; /* Réduire la taille du logo si nécessaire */
+    }
+}
