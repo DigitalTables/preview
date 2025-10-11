@@ -1,3 +1,8 @@
+/* ================================
+   STYLE GLOBAL DIGITAL TABLES
+   Version corrigée – Octobre 2025
+   ================================ */
+
 :root {
   --primary: #a67c52; /* marron doux */
   --secondary: #f5eee5; /* beige clair */
@@ -7,21 +12,25 @@
   --font-serif: 'Playfair Display', serif;
   --font-sans: 'Quicksand', sans-serif;
 }
+
+/* === RESET DE BASE === */
 html, body {
-  max-width: 100%;
-  overflow-x: hidden;
+  max-width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
 }
 
-
 body {
-  margin: 0;
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   background: radial-gradient(ellipse at center, #fffdfb 0%, var(--secondary) 100%);
   color: var(--dark);
   line-height: 1.6;
 }
 
-/* HEADER */
+/* ================================
+   HEADER
+   ================================ */
 header {
   background: var(--primary);
   color: var(--light);
@@ -35,9 +44,9 @@ header .container {
   max-width: 1100px;
   margin: auto;
   padding: 0 1rem;
-  flex-wrap: nowrap; /* Empêche le retour à la ligne */
-  overflow-x: auto; /* Permet un défilement horizontal si nécessaire */
-  gap: 1rem; /* Espacement entre le logo et les liens */
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 1rem;
 }
 
 /* Logo + titre */
@@ -45,7 +54,7 @@ header .container {
   display: flex;
   align-items: center;
   gap: 12px;
-  flex-shrink: 0; /* Empêche la réduction excessive */
+  flex-shrink: 0;
 }
 
 .logo {
@@ -60,20 +69,20 @@ header .container {
   font-size: 1.8rem;
   margin: 0;
   color: var(--light);
-  white-space: nowrap; /* Empêche de couper le titre */
+  white-space: nowrap;
 }
 
 /* MENU */
 nav {
   display: flex;
-  flex-wrap: nowrap;  /* Empêche les éléments du menu de passer à la ligne */
-  justify-content: center; /* Centre les éléments horizontalement */
-  gap: 1rem; /* Espacement entre les éléments du menu */
-  width: 100%;  /* Prend toute la largeur disponible */
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
 }
 
 nav a {
-  white-space: nowrap; /* Empêche le texte des liens de se couper */
+  white-space: nowrap;
   color: var(--light);
   margin-left: 1rem;
   text-decoration: none;
@@ -85,26 +94,36 @@ nav a:hover {
   text-decoration: underline;
 }
 
-/* Sur mobile, le menu reste sur une seule ligne */
+/* Responsive header */
 @media (max-width: 768px) {
   header .container {
-    flex-wrap: nowrap; /* Empêche le retour à la ligne dans tout le container */
-    justify-content: center;  /* Centre le contenu du header */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
   nav {
-    justify-content: center;  /* Centre les liens dans le menu */
-    width: 100%; /* Occupe toute la largeur disponible */
+    margin-top: 0.5rem;
   }
 
   nav a {
-    font-size: 1rem; /* Ajuste légèrement la taille des liens sur mobile */
+    font-size: 1rem;
   }
 }
 
+/* Responsive : logo plus petit sur mobile */
+@media (max-width: 600px) {
+  .logo {
+    height: 40px;
+  }
+  .logo-title h1 {
+    font-size: 1.4rem;
+  }
+}
 
-
-/* HERO */
+/* ================================
+   HERO
+   ================================ */
 .hero {
   background: var(--secondary);
   text-align: center;
@@ -139,7 +158,9 @@ nav a:hover {
   background: #8d6245;
 }
 
-/* SECTIONS */
+/* ================================
+   SECTIONS
+   ================================ */
 section {
   padding: 3rem 1rem;
 }
@@ -158,7 +179,7 @@ section {
   margin-bottom: 2rem;
 }
 
-/* GRID */
+/* GRID LAYOUT */
 .grid, .plans {
   display: flex;
   gap: 2rem;
@@ -166,7 +187,9 @@ section {
   justify-content: center;
 }
 
-/* FEATURES */
+/* ================================
+   FEATURES
+   ================================ */
 .feature {
   flex: 1;
   min-width: 250px;
@@ -177,7 +200,9 @@ section {
   text-align: center;
 }
 
-/* PRICING */
+/* ================================
+   PRICING
+   ================================ */
 .plan {
   flex: 1;
   min-width: 250px;
@@ -199,6 +224,9 @@ section {
   color: var(--primary);
 }
 
+/* ================================
+   IFRAME (JOTFORM CONTAINER)
+   ================================ */
 .iframe-wrapper {
   width: 100%;
   overflow: hidden;
@@ -208,221 +236,17 @@ section {
 
 .iframe-wrapper iframe {
   width: 100%;
-  min-height: 600px; /* Ajuste ici selon la taille réelle nécessaire */
+  min-height: 650px;
   border: none;
   display: block;
-}
-
-/* FORMULAIRE */
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  max-width: 600px;
-  margin: auto;
-}
-
-input, textarea {
-  padding: 0.75rem;
-  border: 1px solid #d0bfae;
-  border-radius: 6px;
-  font-family: var(--font-serif);
-  font-size: 1rem;
-}
-
-button {
-  background: linear-gradient(135deg, var(--secondary) 0%, #e7d8c7 100%);
-  color: var(--dark);
-  padding: 0.75rem;
-  border: 1px solid var(--accent);
-  border-radius: 25px;
-  font-weight: bold;
-  font-family: var(--font-serif);
-  cursor: pointer;
-  transition: all 0.25s ease;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-button:hover {
-  background: linear-gradient(135deg, #e7d8c7 0%, var(--secondary) 100%);
-  transform: translateY(-2px);
-}
-
-button:active {
-  transform: translateY(0);
-}
-
-/* FOOTER */
-footer {
-  background: var(--dark);
-  color: var(--light);
-  text-align: center;
-  padding: 1rem 0;
-  font-size: 0.9rem;
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .grid, .plans {
-    flex-direction: column;
-  }
-
-  header .container {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  nav {
-    margin-top: 0.5rem;
-  }
-  @media (max-width: 768px) {
-  .iframe-wrapper iframe {
-    min-height: 500px; /* un peu moins haut sur mobile */
-  }
-}
-
-}
-/* === LOGO + HEADER FIX === */
-.logo-title {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.logo {
-  height: 50px;          /* Taille adaptée du logo */
-  width: auto;           /* Garde le bon ratio */
-  object-fit: contain;   /* Empêche la déformation */
-  border-radius: 8px;    /* Optionnel : adoucit légèrement les angles */
-}
-
-.logo-title h1 {
-  font-family: var(--font-serif);
-  font-size: 1.8rem;
-  margin: 0;
-  color: var(--light);
-}
-
-/* Ajuste un peu le header */
-header {
-  background: var(--primary);
-  color: var(--light);
-  padding: 0.5rem 0; /* Réduit légèrement la hauteur */
-}
-
-/* Responsive : logo plus petit sur mobile */
-@media (max-width: 600px) {
-  .logo {
-    height: 40px;
-  }
-
-  .logo-title h1 {
-    font-size: 1.4rem;
-  }
-}
-header .container {
-  align-items: center;
-}
-/* === STYLE PERSONNALISÉ JOTFORM === */
-.jotform-form {
-  background: var(--light);
   border-radius: 12px;
-  padding: 2rem;
-  max-width: 600px;
-  margin: 2rem auto;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  font-family: var(--font-serif);
-  color: var(--dark);
 }
 
-.jotform-form h2.form-header {
-  font-family: var(--font-serif);
-  color: var(--primary);
-  text-align: center;
-  margin-bottom: 0.5rem;
-  font-size: 1.6rem;
-}
+/* ================================
+   FORMULAIRE (JOTFORM)
+   ================================ */
 
-.jotform-form .form-subHeader {
-  text-align: center;
-  color: var(--dark);
-  opacity: 0.8;
-  margin-bottom: 2rem;
-  font-family: var(--font-sans);
-}
-
-.form-label {
-  color: var(--dark);
-  font-weight: bold;
-  margin-bottom: 0.3rem;
-  font-family: var(--font-serif);
-}
-
-.form-textbox,
-.form-textarea,
-.form-dropdown {
-  width: 100%;
-  padding: 0.75rem 1rem;
-  border: 1px solid var(--accent);
-  border-radius: 8px;
-  font-family: var(--font-serif);
-  font-size: 1rem;
-  background-color: var(--secondary);
-  transition: all 0.2s ease-in-out;
-}
-
-.form-textbox:focus,
-.form-textarea:focus,
-.form-dropdown:focus {
-  outline: none;
-  border-color: var(--primary);
-  background-color: var(--light);
-  box-shadow: 0 0 0 2px rgba(166, 124, 82, 0.2);
-}
-
-.form-sub-label {
-  font-size: 0.85rem;
-  color: #6b5c4b;
-}
-
-.form-submit-button {
-  background: linear-gradient(135deg, var(--secondary) 0%, #e7d8c7 100%);
-  color: var(--dark);
-  border: 1px solid var(--accent);
-  border-radius: 25px;
-  padding: 0.75rem 1.5rem;
-  font-weight: bold;
-  font-family: var(--font-serif);
-  cursor: pointer;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  transition: all 0.3s ease;
-  display: block;
-  margin: 1rem auto 0;
-}
-
-.form-submit-button:hover {
-  background: linear-gradient(135deg, #e7d8c7 0%, var(--secondary) 100%);
-  transform: translateY(-2px);
-}
-
-.form-submit-button:active {
-  transform: translateY(0);
-}
-
-.form-required {
-  color: #b94e48;
-}
-
-/* Supprime le fond gris JotForm */
-.supernova,
-.form-all {
-  background: transparent !important;
-  box-shadow: none !important;
-}
-
-/* === CONTACT SECTION – HARMONISATION JOTFORM === */
-
-/* Supprime les points, marges, padding inutiles */
+/* Supprime puces et marges internes */
 .jotform-form ul,
 .jotform-form li {
   list-style: none !important;
@@ -430,21 +254,22 @@ header .container {
   padding: 0 !important;
 }
 
-/* Espacement entre les champs */
+/* Espacement des champs */
 .form-line {
   margin-bottom: 1.5rem !important;
   padding: 0 !important;
 }
 
-/* Labels alignés proprement */
+/* Labels */
 .form-label {
   display: block !important;
+  color: var(--dark) !important;
   font-weight: bold !important;
   margin-bottom: 0.4rem !important;
-  color: var(--dark) !important;
+  font-family: var(--font-serif) !important;
 }
 
-/* Champs texte et zone de saisie */
+/* Champs de saisie */
 .form-textbox,
 .form-textarea,
 .form-dropdown,
@@ -457,7 +282,7 @@ textarea {
   border-radius: 8px !important;
   padding: 0.75rem 1rem !important;
   font-size: 1rem !important;
-  font-family: var(--font-serif) !important;
+  font-family: var(--font-sans) !important;
   transition: all 0.2s ease-in-out !important;
   box-sizing: border-box !important;
 }
@@ -467,7 +292,7 @@ textarea {
   resize: vertical !important;
 }
 
-/* Focus élégant */
+/* Focus */
 input:focus,
 textarea:focus {
   outline: none !important;
@@ -488,12 +313,12 @@ textarea:focus {
   color: #6b5c4b !important;
 }
 
-/* Si un seul champ, il prend toute la largeur */
+/* Champ unique = pleine largeur */
 .form-sub-label-container:nth-child(odd):last-child {
   width: 100% !important;
 }
 
-/* Bouton de soumission */
+/* Bouton */
 .form-submit-button,
 button[type="submit"] {
   background: linear-gradient(135deg, var(--secondary) 0%, #e7d8c7 100%) !important;
@@ -515,7 +340,7 @@ button[type="submit"] {
   transform: translateY(-2px) !important;
 }
 
-/* Ajustement global du formulaire */
+/* Formulaire global */
 .jotform-form {
   background: var(--light) !important;
   border-radius: 12px !important;
@@ -526,20 +351,32 @@ button[type="submit"] {
   color: var(--dark) !important;
 }
 
-/* Supprime tous les fonds JotForm restants */
-.supernova,
-.form-all,
-body.supernova {
+/* Nettoyage total des fonds JotForm */
+.supernova, .form-all, body.supernova {
   background: transparent !important;
   box-shadow: none !important;
 }
 
-/* Encadrement responsive du formulaire */
-.iframe-wrapper iframe {
-  width: 100%;
-  min-height: 650px;
-  border: none;
-  border-radius: 12px;
-  display: block;
+/* ================================
+   FOOTER
+   ================================ */
+footer {
+  background: var(--dark);
+  color: var(--light);
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
 }
 
+/* ================================
+   RESPONSIVE GÉNÉRAL
+   ================================ */
+@media (max-width: 768px) {
+  .grid, .plans {
+    flex-direction: column;
+  }
+
+  .iframe-wrapper iframe {
+    min-height: 500px;
+  }
+}
