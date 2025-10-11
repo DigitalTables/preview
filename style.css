@@ -232,7 +232,7 @@ footer { background:var(--dark); color:var(--light); text-align:center; padding:
    RESPONSIVE
    ================================ */
 @media (max-width: 768px) {
-  .grid, .plans { flex-direction:column; }
+  .grid, 
   .digitaltables-jotform .form-sub-label-container { width:100% !important; display:block !important; padding-right:0 !important; margin-bottom:.6rem !important; }
   .iframe-wrapper iframe { min-height:500px; }
   .logo { height:40px; }
