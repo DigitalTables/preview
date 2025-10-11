@@ -231,90 +231,9 @@ footer { background:var(--dark); color:var(--light); text-align:center; padding:
    RESPONSIVE
    ================================ */
 @media (max-width: 768px) {
-   /* Mobile-first adjustments */
-@media (max-width: 768px) {
-  /* Réduire la taille du logo */
-  .logo {
-    height: 40px; /* Réduisez à une taille plus petite */
-  }
-
-  /* Réduire la taille du titre */
-  .logo-title h1 {
-    font-size: 1.4rem; /* Réduisez la taille pour l'adapter à l'écran */
-  }
-
-  /* Ajuster le menu pour s'adapter à l'écran */
-  nav {
-    flex-direction: column; /* Aligner les liens du menu verticalement */
-    text-align: center; /* Centrer les liens */
-  }
-
-  nav a {
-    margin: 0.5rem 0; /* Ajouter des marges verticales au lieu de horizontales */
-    font-size: 1.1rem; /* Ajuster la taille de la police pour plus de lisibilité */
-  }
-
-  /* Réduire les espaces dans le header */
-  header {
-    padding: 0.5rem 1rem; /* Réduire les paddings pour mieux adapter sur mobile */
-  }
-
-  /* Ajuster l'espacement du logo et du titre */
-  .logo-title {
-    gap: 8px; /* Réduire l'espace entre le logo et le titre */
-  }
-
-  /* Masquer les éléments non essentiels ou les déplacer dans un menu hamburger */
-  .logo-title {
-    flex: 1; /* Utiliser tout l'espace disponible pour le logo */
-  }
-
-  nav a {
-    font-size: 1rem; /* Réduire la taille de la police du menu */
-    padding: 0.5rem; /* Ajouter un peu de padding pour que les liens soient plus cliquables */
-  }
-
-  /* Optionnel : ajout d'un hamburger menu pour les petits écrans */
-  .menu-hamburger {
-    display: block; /* Si vous voulez un menu hamburger, faites-en une icône visible */
-    cursor: pointer;
-    font-size: 2rem;
-    display: none;
-  }
-  
-  /* Réduire la taille de la section hero */
-  .hero {
-    padding: 2rem 1rem;
-  }
-
-  /* Ajuster la taille du texte de la section hero */
-  .hero h2 {
-    font-size: 1.6rem; /* Réduire la taille de la police */
-  }
-  
-  .hero p {
-    font-size: 1rem; /* Réduire la taille de la police */
-  }
-
-  .hero .btn {
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
-  }
-
-  /* Ajuster les plans de prix */
-  .plans {
-    flex-direction: column; /* Aligner les plans verticalement sur mobile */
-  }
-
-  .plan {
-    width: 100%; /* S'assurer que les cartes de prix prennent toute la largeur */
-    margin-bottom: 1rem; /* Espacement entre les cartes */
-  }
-}
-
   .grid, .plans { flex-direction:column; }
   .digitaltables-jotform .form-sub-label-container { width:100% !important; display:block !important; padding-right:0 !important; margin-bottom:.6rem !important; }
   .iframe-wrapper iframe { min-height:500px; }
   .logo { height:40px; }
   .logo-title h1 { font-size:1.4rem; }
-}
+   }
