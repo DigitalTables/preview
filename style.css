@@ -43,25 +43,28 @@ body {
 header {
   background: var(--primary);
   color: var(--light);
-  padding: 0.5rem 0 1rem; /* un peu d’espace sous le menu */
+  padding: 0.5rem 0 1rem;
 }
 
 header .container {
   display: flex;
-  flex-direction: column; /* logo/titre en haut, menu en dessous */
+  flex-direction: column; /* logo/titre en haut, menu dessous */
   align-items: center;
   text-align: center;
 }
 
+/* LOGO + TITRE */
 .logo-title {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 0.5rem; /* espace entre titre et menu */
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 0.5rem;
+  flex-wrap: nowrap;
 }
 
 .logo {
-  height: 50px;
+  height: 45px;
   width: auto;
   object-fit: contain;
   border-radius: 8px;
@@ -74,6 +77,51 @@ header .container {
   color: var(--light);
   white-space: nowrap;
 }
+
+/* NAVIGATION */
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: clamp(0.5rem, 2vw, 1.5rem); /* gap adaptatif */
+  overflow-x: auto; /* empêche le débordement */
+  scrollbar-width: none; /* masque la scrollbar */
+  -ms-overflow-style: none;
+  padding: 0 0.5rem;
+  width: 100%;
+}
+
+nav::-webkit-scrollbar {
+  display: none; /* masque la scrollbar sur Chrome/Safari */
+}
+
+nav a {
+  color: var(--light);
+  text-decoration: none;
+  font-weight: 600;
+  font-family: var(--font-serif);
+  font-size: clamp(0.85rem, 2.2vw, 1rem); /* texte adaptatif */
+  white-space: nowrap; /* garde les liens sur une seule ligne */
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .logo {
+    height: 38px;
+  }
+  .logo-title h1 {
+    font-size: 1.4rem;
+  }
+  nav {
+    gap: clamp(0.4rem, 1.5vw, 1rem);
+  }
+}
+
 
 /* NAVIGATION */
 nav {
@@ -268,21 +316,4 @@ body, p, li, input, textarea,
 /* ================================
    FOOTER
    ================================ */
-footer { background:var(--dark); color:var(--light); text-align:center; padding:1rem 0; font-size:.9rem; }
-
-/* ================================
-   RESPONSIVE
-   ================================ */
-@media (max-width: 768px) {
-  nav {
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-  .logo {
-    height: 40px;
-  }
-  .logo-title h1 {
-    font-size: 1.4rem;
-  }
-}
-
+footer { background:var(--dark); color:var(--light); text-align:center; padding:1rem 0; font-size:.9rem; 
