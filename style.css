@@ -143,7 +143,6 @@ nav a:hover {
 }
 
 
-
 /* HERO */
 .hero { background: var(--secondary); text-align:center; padding:4rem 1rem; }
 .hero h2 { font-family:var(--font-serif); font-size:2rem; margin-bottom:1rem; }
