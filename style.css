@@ -420,4 +420,126 @@ header .container {
   box-shadow: none !important;
 }
 
+/* === CONTACT SECTION – HARMONISATION JOTFORM === */
+
+/* Supprime les points, marges, padding inutiles */
+.jotform-form ul,
+.jotform-form li {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Espacement entre les champs */
+.form-line {
+  margin-bottom: 1.5rem !important;
+  padding: 0 !important;
+}
+
+/* Labels alignés proprement */
+.form-label {
+  display: block !important;
+  font-weight: bold !important;
+  margin-bottom: 0.4rem !important;
+  color: var(--dark) !important;
+}
+
+/* Champs texte et zone de saisie */
+.form-textbox,
+.form-textarea,
+.form-dropdown,
+input,
+textarea {
+  width: 100% !important;
+  background-color: var(--secondary) !important;
+  border: 1px solid var(--accent) !important;
+  color: var(--dark) !important;
+  border-radius: 8px !important;
+  padding: 0.75rem 1rem !important;
+  font-size: 1rem !important;
+  font-family: var(--font-serif) !important;
+  transition: all 0.2s ease-in-out !important;
+  box-sizing: border-box !important;
+}
+
+.form-textarea {
+  min-height: 120px !important;
+  resize: vertical !important;
+}
+
+/* Focus élégant */
+input:focus,
+textarea:focus {
+  outline: none !important;
+  border-color: var(--primary) !important;
+  background-color: var(--light) !important;
+  box-shadow: 0 0 0 2px rgba(166, 124, 82, 0.2) !important;
+}
+
+/* Sous-labels */
+.form-sub-label-container {
+  display: inline-block !important;
+  width: 48% !important;
+  vertical-align: top !important;
+}
+
+.form-sub-label {
+  font-size: 0.85rem !important;
+  color: #6b5c4b !important;
+}
+
+/* Si un seul champ, il prend toute la largeur */
+.form-sub-label-container:nth-child(odd):last-child {
+  width: 100% !important;
+}
+
+/* Bouton de soumission */
+.form-submit-button,
+button[type="submit"] {
+  background: linear-gradient(135deg, var(--secondary) 0%, #e7d8c7 100%) !important;
+  color: var(--dark) !important;
+  border: 1px solid var(--accent) !important;
+  border-radius: 25px !important;
+  font-weight: bold !important;
+  font-family: var(--font-serif) !important;
+  cursor: pointer !important;
+  padding: 0.75rem 1.5rem !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1) !important;
+  display: block !important;
+  margin: 1.5rem auto 0 !important;
+}
+
+.form-submit-button:hover {
+  background: linear-gradient(135deg, #e7d8c7 0%, var(--secondary) 100%) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Ajustement global du formulaire */
+.jotform-form {
+  background: var(--light) !important;
+  border-radius: 12px !important;
+  padding: 2rem !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+  margin: 2rem auto !important;
+  max-width: 600px !important;
+  color: var(--dark) !important;
+}
+
+/* Supprime tous les fonds JotForm restants */
+.supernova,
+.form-all,
+body.supernova {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Encadrement responsive du formulaire */
+.iframe-wrapper iframe {
+  width: 100%;
+  min-height: 650px;
+  border: none;
+  border-radius: 12px;
+  display: block;
+}
 
