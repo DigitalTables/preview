@@ -43,16 +43,58 @@ body {
 header {
   background: var(--primary);
   color: var(--light);
-  padding: 0.5rem 0;
+  padding: 0.5rem 0 1rem; /* un peu d’espace sous le menu */
 }
-header .container { display:flex; justify-content:space-between; align-items:center; gap:1rem; flex-wrap:nowrap; overflow-x:auto; }
-.logo-title { display:flex; align-items:center; gap:12px; flex-shrink:0; }
-.logo { height:50px; width:auto; object-fit:contain; border-radius:8px; }
-.logo-title h1 { font-family:var(--font-serif); font-size:1.8rem; margin:0; color:var(--light); white-space:nowrap; }
 
-nav { display:flex; gap:1rem; width:100%; justify-content:center; }
-nav a { color:var(--light); text-decoration:none; margin-left:1rem; font-weight:600; font-family:var(--font-serif); }
-nav a:hover { text-decoration:underline; }
+header .container {
+  display: flex;
+  flex-direction: column; /* logo/titre en haut, menu en dessous */
+  align-items: center;
+  text-align: center;
+}
+
+.logo-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 0.5rem; /* espace entre titre et menu */
+}
+
+.logo {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.logo-title h1 {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  margin: 0;
+  color: var(--light);
+  white-space: nowrap;
+}
+
+/* NAVIGATION */
+nav {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+nav a {
+  color: var(--light);
+  text-decoration: none;
+  font-weight: 600;
+  font-family: var(--font-serif);
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+
 
 /* HERO */
 .hero { background: var(--secondary); text-align:center; padding:4rem 1rem; }
