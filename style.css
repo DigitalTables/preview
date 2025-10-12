@@ -366,6 +366,20 @@ button:hover {
   transform: translateY(-2px);
 }
 
+/* ✅ Centrer le bouton du formulaire */
+.digitaltables-jotform .form-buttons-wrapper {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center;
+  text-align: center;
+}
+
+.digitaltables-jotform .form-submit-button {
+  display: inline-block;
+  margin: 0 auto;
+}
+
+
 /* ================================
    TYPOGRAPHIE GLOBALE
 ================================ */
