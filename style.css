@@ -50,11 +50,13 @@ header {
   padding: 0.5rem 0 1rem;
 }
 
+/* NOTE: padding left/right added to avoid clipping on mobile */
 header .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  padding: 0 0.5rem;
 }
 
 /* LOGO + TITRE */
@@ -79,19 +81,20 @@ header .container {
   font-size: 1.8rem;
   margin: 0;
   color: var(--light);
-  white-space: nowrap;
+  white-space: nowrap; /* will be relaxed on small screens with media query */
 }
 
 /* ================================
    NAVIGATION
 ================================ */
+/* Desktop / default */
 nav {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: clamp(0.5rem, 2vw, 1.5rem);
-  flex-wrap: nowrap;
-  overflow-x: auto;
+  flex-wrap: nowrap;                /* default: single-line menu */
+  overflow-x: auto;                /* keep desktop horizontal scroll if needed */
   scrollbar-width: none;
   -ms-overflow-style: none;
   padding: 0 0.5rem;
@@ -108,8 +111,10 @@ nav a {
   font-weight: 600;
   font-family: var(--font-serif);
   font-size: clamp(0.85rem, 2.2vw, 1rem);
-  white-space: nowrap;
+  white-space: nowrap;             /* desktop: prevent wrap inside each link */
   padding: 0.25rem 0;
+  display: inline-block;
+  text-align: center;
 }
 
 nav a:hover {
@@ -117,29 +122,48 @@ nav a:hover {
 }
 
 /* ===== RESPONSIVE MENU ===== */
+@media (max-width: 992px) {
+  /* slightly reduce spacing on medium-small screens */
+  nav {
+    gap: 0.9rem;
+  }
+}
+
 @media (max-width: 768px) {
+  /* Header container keeps centered layout but allow slight horizontal padding */
   header .container {
     flex-direction: column;
     align-items: center;
+    padding: 0 1rem;
   }
 
   .logo {
     height: 38px;
   }
 
+  /* Allow the site title to wrap on mobile so it doesn't force nav overflow */
   .logo-title h1 {
     font-size: 1.4rem;
+    white-space: normal;
+    text-align: center;
   }
 
+  /* IMPORTANT: Allow nav to wrap to multiple lines and stop forcing horizontal scroll */
   nav {
-    justify-content: flex-start;
-    overflow-x: auto;
-    padding: 0.5rem 1rem;
-    gap: 1rem;
+    justify-content: center;   /* center items on each row */
+    align-items: center;
+    flex-wrap: wrap;           /* permit wrapping */
+    overflow-x: visible;       /* no horizontal scroll on mobile */
+    padding: 0.5rem 0.5rem;
+    gap: 0.9rem;
   }
 
+  /* Let each link wrap naturally (avoid cutting words) */
   nav a {
     font-size: 0.95rem;
+    white-space: normal;       /* allow link text to break on smaller widths */
+    padding: 0.35rem 0.6rem;
+    border-radius: 6px;
   }
 }
 
@@ -301,7 +325,6 @@ button {
 
 button:hover {
   transform: translateY(-2px);
-  background: linear-gradient(135deg, #e7d8c7 0%, var(--secondary) 100%);
 }
 
 /* ================================
@@ -311,7 +334,7 @@ button:hover {
   width: 100%;
 }
 
-/* ✅ Suppression des puces + meilleure mise en page du formulaire */
+/* Suppression des puces + meilleure mise en page du formulaire */
 .digitaltables-jotform ul,
 .digitaltables-jotform li {
   list-style: none !important;
@@ -319,7 +342,7 @@ button:hover {
   padding: 0;
 }
 
-/* ✅ Apparence améliorée du bloc formulaire */
+/* Apparence améliorée du bloc formulaire */
 .digitaltables-jotform .jotform-form {
   background: var(--light) !important;
   border-radius: 12px !important;
@@ -330,7 +353,7 @@ button:hover {
   border: 1px solid #eee;
 }
 
-/* ✅ Labels et sous-labels plus élégants */
+/* Labels et sous-labels plus élégants */
 .digitaltables-jotform .form-label {
   font-weight: 700 !important;
   color: var(--dark);
@@ -343,15 +366,25 @@ button:hover {
   color: #6b5a4a;
 }
 
-/* ✅ Champs plus harmonieux */
+/* Champs plus harmonieux */
 .digitaltables-jotform input,
 .digitaltables-jotform textarea {
   width: 100%;
   margin-bottom: 0.75rem;
 }
 
-/* ✅ Bouton de soumission stylé */
+/* Centrer le bouton du formulaire */
+.digitaltables-jotform .form-buttons-wrapper {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center;
+  text-align: center;
+  padding-top: 0.5rem;
+}
+
 .digitaltables-jotform .form-submit-button {
+  display: inline-block;
+  margin: 0 auto;
   background: var(--primary) !important;
   color: var(--light) !important;
   border: none !important;
@@ -365,20 +398,6 @@ button:hover {
   background: #8d6245 !important;
   transform: translateY(-2px);
 }
-
-/* ✅ Centrer le bouton du formulaire */
-.digitaltables-jotform .form-buttons-wrapper {
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center;
-  text-align: center;
-}
-
-.digitaltables-jotform .form-submit-button {
-  display: inline-block;
-  margin: 0 auto;
-}
-
 
 /* ================================
    TYPOGRAPHIE GLOBALE
