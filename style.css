@@ -330,7 +330,4 @@ footer { background:var(--dark); color:var(--light); text-align:center; padding:
         margin-right: 20px; /* Espacement entre les éléments */
     }
 
-    header .logo img {
-        max-width: 120px; /* Réduire la taille du logo si nécessaire */
-    }
-          }
+          
